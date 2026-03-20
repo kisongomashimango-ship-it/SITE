@@ -1,0 +1,322 @@
+BASES<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DW EVENT - Gestion Premium des Événements</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Animated Background -->
+  <div class="bg-animation">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="glass-header">
+    <div class="logo">
+      <span class="logo-icon">⚡</span>
+<span class="logo-text">DW EVENT</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#" class="nav-link active" data-section="home">
+        <span class="nav-icon">🏠</span> Accueil
+      </a>
+      <a href="#" class="nav-link" data-section="create">
+        <span class="nav-icon">➕</span> Créer
+      </a>
+      <a href="#" class="nav-link" data-section="events">
+        <span class="nav-icon">📅</span> Événements
+      </a>
+      <a href="#" class="nav-link" data-section="gallery">
+        <span class="nav-icon">📸</span> Galerie
+      </a>
+      <a href="#" class="nav-link" data-section="contact">
+        <span class="nav-icon">📞</span> Contact
+      </a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème">
+      🌙
+    </button>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+  <!-- Hero Section with Photo -->
+  <section class="hero" id="home">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="gradient-text">Gérez vos événements</span>
+          <br>avec élégance
+        </h1>
+        <p class="hero-subtitle">
+          Une expérience moderne et intuitive pour organiser vos événements inoubliables
+        </p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number" id="totalEvents">0</span>
+            <span class="stat-label">Événements</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" id="upcomingEvents">0</span>
+            <span class="stat-label">À venir</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" id="pastEvents">0</span>
+            <span class="stat-label">Passés</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="floating-card card-1">
+          <span class="card-icon">🎉</span>
+          <span>Conférence Tech 2024</span>
+        </div>
+        <div class="floating-card card-2">
+          <span class="card-icon">🎯</span>
+          <span>Workshop Design</span>
+        </div>
+        <div class="floating-card card-3">
+          <span class="card-icon">🎭</span>
+          <span>Soirée Gala</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Create Event Section -->
+    <section class="create-section" id="create">
+      <div class="form-container glass-card">
+        <div class="form-header">
+          <h2>✨ Créer un nouvel événement</h2>
+          <p>Remplissez les détails pour ajouter un événement</p>
+        </div>
+        <form id="eventForm" class="event-form">
+          <div class="form-group">
+            <label for="eventName">
+              <span class="label-icon">📝</span> Nom de l'événement
+            </label>
+            <input 
+              type="text" 
+              id="eventName" 
+              placeholder="Ex: Conférence Annuelle 2024"
+              required
+              autocomplete="off"
+            >
+            <span class="input-highlight"></span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="eventDate">
+                <span class="label-icon">📅</span> Date
+              </label>
+              <input 
+                type="date" 
+                id="eventDate" 
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="eventTime">
+                <span class="label-icon">⏰</span> Heure
+              </label>
+              <input 
+                type="time" 
+                id="eventTime"
+                required
+              >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="eventLocation">
+              <span class="label-icon">📍</span> Lieu
+            </label>
+            <input 
+              type="text" 
+              id="eventLocation" 
+              placeholder="Ex: Paris, France"
+              required
+              autocomplete="off"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="eventDescription">
+              <span class="label-icon">📄</span> Description
+            </label>
+            <textarea 
+              id="eventDescription" 
+              placeholder="Décrivez votre événement..."
+              rows="3"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="eventCategory">
+              <span class="label-icon">🏷️</span> Catégorie
+            </label>
+            <select id="eventCategory">
+              <option value="professional">💼 Professionnel</option>
+              <option value="personal">🎉 Personnel</option>
+              <option value="education">📚 Éducation</option>
+              <option value="entertainment">🎭 Divertissement</option>
+              <option value="sports">⚽ Sport</option>
+              <option value="other">📌 Autre</option>
+            </select>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <span class="btn-text">Créer l'événement</span>
+            <span class="btn-icon">🚀</span>
+            <div class="btn-glow"></div>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Events List Section -->
+    <section class="events-section" id="events">
+      <div class="section-header">
+        <h2>📋 Vos événements</h2>
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all">Tous</button>
+          <button class="filter-tab" data-filter="upcoming">À venir</button>
+          <button class="filter-tab" data-filter="past">Passés</button>
+        </div>
+      </div>
+      <div class="events-grid" id="eventList">
+        <!-- Events will be dynamically added here -->
+        <div class="empty-state">
+          <span class="empty-icon">🎊</span>
+          <h3>Aucun événement</h3>
+          <p>Créez votre premier événement pour commencer!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery">
+      <div class="section-header">
+        <h2>📸 Notre Galerie</h2>
+        <p>Découvrez les moments inoubliables de nos événements</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item large">
+          <img src="./IMG-20260226-WA0120.jpg" alt="Photo événements DW" onerror="this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800'">
+          <div class="gallery-overlay">
+            <span>🎉 DW EVENT</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400" alt="Conférence">
+          <div class="gallery-overlay">
+            <span>💼 Conférence</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=400" alt="Événements">
+          <div class="gallery-overlay">
+            <span>🎭 Événements</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=400" alt="Fête">
+          <div class="gallery-overlay">
+            <span>🎉 Fête</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=400" alt="Événements">
+          <div class="gallery-overlay">
+            <span>✨ Célébration</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=400" alt="Éclairage">
+          <div class="gallery-overlay">
+            <span>💡 Innovation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <div class="contact-header">
+          <h2>📞 Nous Contacter</h2>
+          <p>Une question ? Besoin d'aide pour organiser votre événement ?</p>
+        </div>
+        
+        <div class="contact-grid">
+          <div class="contact-card glass-card">
+            <div class="contact-icon">📱</div>
+            <h3>Téléphone</h3>
+            <p>+243 812 345 678</p>
+          </div>
+          
+          <div class="contact-card glass-card">
+            <div class="contact-icon">📧</div>
+            <h3>Email</h3>
+            <p>contact@dwevent.cd</p>
+          </div>
+          
+          <div class="contact-card glass-card">
+            <div class="contact-icon">📍</div>
+            <h3>Adresse</h3>
+            <p>Kinshasa, République Démocratique du Congo</p>
+          </div>
+          
+          <div class="contact-card glass-card">
+            <div class="contact-icon">🕐</div>
+            <h3>Horaires</h3>
+            <p>Lun - Sam: 8h00 - 18h00</p>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook">📘</a>
+          <a href="#" class="social-link" aria-label="Instagram">📸</a>
+          <a href="#" class="social-link" aria-label="WhatsApp">💬</a>
+          <a href="#" class="social-link" aria-label="LinkedIn">💼</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-icon">⚡</span>
+          <span class="logo-text">DW EVENT</span>
+        </div>
+        <p class="footer-text">© 2024 DW EVENT - Votre partenaire événements à Kinshasa</p>
+        <p class="footer-subtext">Fait avec ❤️ en RDC</p>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Toast Notification -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Modal -->
+  <div class="modal" id="eventModal">
+    <div class="modal-content glass-card">
+      <button class="modal-close" aria-label="Fermer">&times;</button>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-top" id="scrollTop" aria-label="Retour en haut">⬆️</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

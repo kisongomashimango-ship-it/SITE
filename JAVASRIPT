@@ -1,0 +1,15 @@
+document.getElementById("eventForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("eventName").value;
+  const date = document.getElementById("eventDate").value;
+  const location = document.getElementById("eventLocation").value;
+
+  const li = document.createElement("li");
+  li.textContent = `${name} - ${date} - ${location}`;
+
+  document.getElementById("eventList").appendChild(li);
+
+  // Réinitialiser le formulaire
+  document.getElementById("eventForm").reset();
+});
