@@ -57,6 +57,9 @@ Ouvrir http://localhost:3000
 - `npm start` : Prod (PORT env)
 - `npm run dev` : Dev nodemon
 
+## 🔗 Partage Mobile
+Double-clic `share-links.bat` → Copie URL → WhatsApp/SMS/Email.
+
 ## 📱 Aperçu
 ![DW EVENT](IMG-20260226-WA0120.jpg)
 
