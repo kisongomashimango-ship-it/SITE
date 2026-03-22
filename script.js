@@ -43,6 +43,11 @@ let currentFilter = 'all';
 let isDarkMode = localStorage.getItem('theme') !== 'light';
 let abortController = new AbortController();
 
+function newAbortController() {
+  abortController = new AbortController();
+  return abortController;
+}
+
 // ========================================
 // Initialize App
 // ========================================
@@ -57,7 +62,7 @@ async function init() {
 async function loadEvents(filter = null) {
   try {
     const params = new URLSearchParams({ filter: filter || currentFilter });
-    const response = await fetch(`${API_BASE}/events?${params}`, { signal: abortController.signal });
+    const response = await fetch(`${API_BASE}/events?${params}`, { signal: newAbortController().signal });
     if (!response.ok) throw new Error('Erreur chargement');
     events = await response.json();
     renderEvents();
@@ -143,15 +148,19 @@ async function addEvent(event) {
     showToast('Événement créé avec succès! 🎉', 'success');
   } catch (err) {
     console.error(err);
-    showToast('Erreur création (localStorage utilisé)', 'error');
-    // Fallback local
-    const newEvent = {
+    showToast('Erreur création (mode hors-ligne activé)', 'error');
+    // Fallback local si le serveur est injoignable
+    const newEventOffline = {
       id: Date.now(),
-      ...event.target.querySelector('#eventName').value.trim(),
-      date: event.target.querySelector('#eventDate').value,
-      // ... (simplified fallback)
+      name: elements.eventName.value.trim(),
+      date: elements.eventDate.value,
+      time: elements.eventTime.value,
+      location: elements.eventLocation.value.trim(),
+      description: elements.eventDescription.value.trim(),
+      category: elements.eventCategory.value || 'other',
+      createdAt: new Date().toISOString()
     };
-    events.unshift(newEvent);
+    events.unshift(newEventOffline);
     saveEvents();
     renderEvents();
   } finally {
@@ -281,7 +290,7 @@ function filterEvents(eventsToFilter) {
 
 async function updateStats() {
   try {
-    const response = await fetch(`${API_BASE}/events/stats`, { signal: abortController.signal });
+    const response = await fetch(`${API_BASE}/events/stats`, { signal: newAbortController().signal });
     if (response.ok) {
       const stats = await response.json();
       elements.totalEvents.textContent = stats.total;

@@ -1,10 +1,19 @@
-# TODO - Déploiement Render Gratuit
+# Déploiement Render - Plan Exécuté
 
-✅ 1. Créer TODO.md
-✅ 2. Éditer package.json (engines ajouté)
-✅ 3. Éditer README.md (instructions détaillées)
-✅ 4. Git init/add/commit (prêt)
+## ✅ Complété
+- [x] Analyse projet & plan confirmé
+- [x] package.json prêt (engines Node 20)
+- [x] server.js prod-ready (PORT env)
 
-⏳ 5. Créer GitHub repo + push (ex: deploy_render.bat)
-⏳ 6. Render deploy
-⏳ 7. URL live
+## 🔄 En cours (exécuter séquentiel)
+1. **Vérifier local**: `npm start` → http://localhost:3000 OK?
+2. **Git status/remote**: Vérifier/push prêt.
+3. **Créer GitHub repo**: "dw-event-app" (public, NO README).
+4. **Push**: `git remote add origin https://github.com/VOTRE_USER/dw-event-app.git && git push -u origin main`
+5. **Render.com**: New Web Service → Connect repo → Node / `npm install` / `npm start` → Deploy.
+6. **Test URL live**.
+
+## ⏳ Prochain
+Exécuter git, créer repo GitHub, puis Render.
+
+**Note**: SQLite reset sur Render free (démo OK).
