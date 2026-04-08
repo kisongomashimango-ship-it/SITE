@@ -119,7 +119,7 @@ BASES<!DOCTYPE html>
           <div class="festival-image-container">
             <img src="./IMG-20260406-WA0337.jpg" alt="Bleue Festival - Événement à venir" class="festival-image">
           </div>
-          <a href="#create" class="festival-cta">RÉSERVER MAINTENANT</a>
+<button onclick="showFestivalInfo()" class="festival-cta btn-info-resa">INFO &amp; RÉSERVATION</button>
         </div>
       </div>
     </section>
@@ -342,7 +342,7 @@ BASES<!DOCTYPE html>
               <span class="label-icon">🏷️</span> Catégorie
             </label>
             <select id="eventCategory">
-              <option value="professional">💼 Professionnel</option>
+<option value="festival">🎉 Concert Festival</option>
               <option value="personal">🎉 Personnel</option>
               <option value="education">📚 Éducation</option>
               <option value="entertainment">🎭 Divertissement</option>
@@ -372,11 +372,17 @@ BASES<!DOCTYPE html>
       </div>
       <div class="events-grid" id="eventList">
         <!-- Events will be dynamically added here -->
-        <div class="empty-state">
-          <span class="empty-icon">🎊</span>
-          <h3>Aucun événement</h3>
-          <p>Créez votre premier événement pour commencer!</p>
-        </div>
+
+        <div class="empty-state highlight-empty">
+        <div class="empty-icon-large">🎉</div>
+        <h2>Bleue Festival - Prochain Événement</h2>
+        <p class="highlight-text blue-gradient">17 et 18 Juillet 2026</p>
+        <p>Réservations : <strong>0999136841</strong> | <strong>0819260301</strong></p>
+        <p>Préparez votre événement dès maintenant !</p>
+        <a href="#create" class="empty-cta submit-btn">Créer Événement</a>
+      </div>
+
+
       </div>
     </section>
 
@@ -503,6 +509,11 @@ BASES<!DOCTYPE html>
           .then(reg => console.log('✅ PWA Service Worker OK'))
           .catch(err => console.log('❌ SW fail:', err));
       });
+    }
+  </script>
+  <script>
+    function showFestivalInfo() {
+      alert('🎉 BLEUE FESTIVAL KINSHASA 2026\\n📅 17-18 Juillet 2026\\n📞 Réservations: 0999136841 | 0819260301\\n\\nCliquez Créer pour votre pass !');
     }
   </script>
   <script src="script.js"></script>
