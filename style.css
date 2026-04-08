@@ -272,9 +272,20 @@ main {
 
 .festival-img {
   width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
   border-radius: 25px;
   box-shadow: var(--shadow-gold);
 }
+
+@media (max-width: 768px) {
+  .festival-img {
+    max-height: 300px !important;
+    border-radius: 20px !important;
+  }
+}
+
 
 .festival-info h3 {
   font-family: var(--font-title);
@@ -336,9 +347,35 @@ main {
 }
 
 .service-card, .stat-card {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
   text-align: center;
-  padding: 3rem 2rem;
+  padding: 2rem 1.5rem;
+  min-height: 300px;
 }
+
+.service-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow-gold);
+}
+
+@media (max-width: 768px) {
+  .service-card {
+    padding: 1.5rem 1rem !important;
+    gap: 1rem !important;
+  }
+  
+  .service-image {
+    height: 120px !important;
+  }
+}
+
 
 .service-image {
   width: 100%;
@@ -514,12 +551,13 @@ main {
 main > section {
   display: flex !important;
   flex-direction: column !important;
-  justify-content: flex-start !important;
+  justify-content: center !important;
   align-items: center !important;
-  min-height: auto !important;
-  padding: 2rem 1rem !important;
-  gap: 1.5rem !important;
+  min-height: 100vh !important;
+  padding: 3rem 1rem !important;
+  gap: 2rem !important;
 }
+
   
 .hero {
   min-height: 100vh !important;
@@ -529,14 +567,40 @@ main > section {
 }
   
 .glass-header {
-  padding: 0.5rem 1rem !important;
+  padding: 1rem 1.5rem !important;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.8rem;
 }
+
+.festival-meta {
+  padding: 1.5rem 0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .festival-meta {
+    font-size: 1.1rem !important;
+    padding: 1rem 0 !important;
+  }
+}
+
   
   .nav-links {
     display: none !important;
   }
+  
+  .bg-animation {
+    display: none !important;
+  }
+  
+  .hero-stats {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    align-items: center !important;
+  }
+
   
   h1, h2, h3 {
     font-size: 2rem !important;
