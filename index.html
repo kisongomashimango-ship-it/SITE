@@ -6,8 +6,12 @@ BASES<!DOCTYPE html>
 <title>DW EVENT - Gestion Premium des Événements</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="/public/manifest.json">
+  <meta name="theme-color" content="#d4af37">
+  <link rel="apple-touch-icon" href="/public/manifest.json">
+
 </head>
 <body>
   <!-- Animated Background -->
@@ -87,12 +91,7 @@ BASES<!DOCTYPE html>
           </div>
         </div>
       </div>
-      <div class="hero-visual">
-        <div class="floating-card card-1">
-          <span class="card-icon">🎉</span>
-          <span>Conférence Tech 2024</span>
-        </div>
-        <div class="floating-card card-2">
+
           <span class="card-icon">🎯</span>
           <span>Workshop Design</span>
         </div>
@@ -349,9 +348,9 @@ BASES<!DOCTYPE html>
       </div>
       <div class="gallery-grid">
         <div class="gallery-item large">
-          <img src="./IMG-20260226-WA0120.jpg" alt="Photo événements DW" onerror="this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800'">
+          <img src="./IMG-20260406-WA0337.jpg" alt="Bleue Festival - Événement DW EVENT" onerror="this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800'">
           <div class="gallery-overlay">
-            <span>🎉 DW EVENT</span>
+            <span>🎉 Bleue Festival</span>
           </div>
         </div>
         <div class="gallery-item">
@@ -457,6 +456,15 @@ BASES<!DOCTYPE html>
   <!-- Scroll to Top Button -->
   <button class="scroll-top" id="scrollTop" aria-label="Retour en haut">⬆️</button>
 
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(reg => console.log('✅ PWA Service Worker OK'))
+          .catch(err => console.log('❌ SW fail:', err));
+      });
+    }
+  </script>
   <script src="script.js"></script>
 </body>
 </html>

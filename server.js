@@ -9,7 +9,16 @@ const PORT = process.env.PORT || 3000;
 // Middlewares
 app.use(cors());
 app.use(express.json());
+app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use(express.static(__dirname)); // Serve frontend files
+
+// PWA Headers
+app.use((req, res, next) => {
+  res.setHeader('Service-Worker-Allowed', '/');
+  res.setHeader('Cross-Origin-Embedder-Policy', 'require-corp');
+  res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
+  next();
+});
 
 // Routes API Événements
 app.get('/api/events', (req, res) => {
