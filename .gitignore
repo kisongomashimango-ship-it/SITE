@@ -9,4 +9,8 @@ ngrok.*
 package-lock.json
 /dist
 /build
+Screenshot*
+*.jpg
+IMG-2026*
+
 
