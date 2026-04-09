@@ -1,5 +1,24 @@
 // Script.js - Fonctionnalités DW EVENT
 document.addEventListener('DOMContentLoaded', function() {
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  
+  if (mobileMenuBtn && mobileNav) {
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileNav.classList.toggle('active');
+      mobileMenuBtn.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+    });
+    
+    // Close on link click
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('active');
+        mobileMenuBtn.textContent = '☰';
+      });
+    });
+  }
+
   // Stats counter (exemple)
   const stats = document.querySelectorAll('.stat-number');
   stats.forEach(stat => {
@@ -17,7 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('a[href^=\"#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({behavior: 'smooth'});
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({behavior: 'smooth'});
     });
   });
 
@@ -25,6 +45,16 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('themeToggle')?.addEventListener('click', () => {
     document.body.classList.toggle('dark-theme');
   });
+
+  // Mobile viewport fix
+  let vh = 0;
+  const setVh = () => {
+    vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  };
+  setVh();
+  window.addEventListener('resize', setVh);
+  window.addEventListener('orientationchange', () => setTimeout(setVh, 100));
   
-  console.log('✅ DW EVENT script chargé');
+  console.log('✅ DW EVENT script chargé - Mobile ready');
 });

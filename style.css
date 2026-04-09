@@ -1,9 +1,8 @@
 /* DW EVENT - SITE PRO BEAU LUXUEUX 2024 - BLEUE FESTIVAL */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@300;400;500;600&display=swap');
 
-/* Variables Luxe Dark + Bleu Electrique + Or */
-:root {
-  /* Couleurs Luxe */
+
+
   --bg-dark: #0a0a0a;
   --bg-glass: rgba(255, 255, 255, 0.05);
   --gold: #D4AF37;
@@ -70,6 +69,51 @@ body {
   justify-content: space-between;
   align-items: center;
   transition: all 0.3s ease;
+  touch-action: manipulation;
+}
+
+#mobileMenuBtn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--gold);
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+}
+
+.mobile-nav-drawer {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  gap: 0;
+}
+
+.mobile-nav-drawer.active {
+  max-height: 500px;
+  padding: 1rem 0;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  #mobileMenuBtn {
+    display: block !important;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-end;
+  }
 }
 
 .logo {
@@ -154,13 +198,13 @@ main {
 
 /* Hero Section - Centre XXL */
 .hero {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 6rem 1rem 2rem;
   position: relative;
 }
 
@@ -586,8 +630,14 @@ main > section {
 }
 
   
-  .nav-links {
-    display: none !important;
+.nav-links {
+    display: flex !important;
+  }
+  
+  .nav-link {
+    padding: 0.8rem 1.5rem !important;
+    font-size: 1rem !important;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
   }
   
   .bg-animation {
