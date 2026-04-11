@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Événements DW EVENT - PostgreSQL</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 min-h-screen p-8">
+  <div class="max-w-4xl mx-auto">
+    <header class="text-center mb-12">
+      <h1 class="text-5xl font-black text-white mb-4 animate-pulse">📅 ÉVÉNEMENTS</h1>
+      <p class="text-xl text-indigo-100">Neon PostgreSQL Live Data <span class="text-green-400 font-bold">✅ LIVE</span></p>
+      <div class="mt-4">
+        <a href="/" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full font-bold">🏠 Accueil</a>
+        <a href="/api/events" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-bold ml-4">🔗 API JSON</a>
+      </div>
+    </header>
+
+    <div id="stats" class="grid grid-cols-3 gap-6 mb-12 text-center">
+      <!-- Stats loaded by JS -->
+    </div>
+
+    <div id="events-list" class="space-y-6">
+      <!-- Événements loaded -->
+      <div class="text-center py-12">
+        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-400 mx-auto"></div>
+        <p class="text-indigo-200 mt-4">Chargement événements Neon...</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Stats
+    fetch('/api/events/stats')
+      .then(r => r.json())
+      .then(stats => {
+        document.getElementById('stats').innerHTML = `
+          <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
+            <h3 class="text-3xl font-black text-white">${stats.total}</h3>
+            <p class="text-indigo-200">Total</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
+            <h3 class="text-3xl font-black text-green-400">${stats.upcoming}</h3>
+            <p class="text-green-200">À venir</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
+            <h3 class="text-3xl font-black text-red-400">${stats.past}</h3>
+            <p class="text-red-200">Passés</p>
+          </div>
+        `;
+      });
+
+    // Événements
+    function loadEvents(filter = 'all') {
+      fetch(`/api/events?filter=${filter}`)
+        .then(r => r.json())
+        .then(events => {
+          const list = document.getElementById('events-list');
+          if (!events.length) {
+            list.innerHTML = '<div class="text-center py-20"><p class="text-2xl text-indigo-200">Aucun événement</p></div>';
+            return;
+          }
+          list.innerHTML = events.map(e => `
+            <div class="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 hover:scale-[1.02] transition-all duration-300 group">
+              <div class="flex justify-between items-start mb-4">
+                <h2 class="text-2xl font-black text-white">${e.name}</h2>
+                <span class="bg-gradient-to-r from-indigo-500 to-purple-600 px-4 py-2 rounded-full text-sm font-bold text-white">
+                  ${e.category || 'other'}
+                </span>
+              </div>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-lg mb-4">
+                <div><span class="text-indigo-200">📅 Date:</span> <span class="font-bold text-white">${e.date}</span></div>
+                <div><span class="text-indigo-200">🕒 Heure:</span> <span class="font-bold text-white">${e.time}</span></div>
+                <div><span class="text-indigo-200">📍 Lieu:</span> <span class="font-bold text-white">${e.location}</span></div>
+                <div><span class="text-indigo-200">Ajouté:</span> <span class="text-sm">${new Date(e.created_at).toLocaleDateString('fr-FR')}</span></div>
+              </div>
+              ${e.description ? `<p class="text-indigo-100 italic">${e.description}</p>` : ''}
+            </div>
+          `).join('');
+        });
+    }
+
+    loadEvents();
+    
+    // Auto refresh 30s
+    setInterval(() => loadEvents(), 30000);
+  </script>
+</body>
+</html>
+

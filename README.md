@@ -1,66 +1,56 @@
 # DW EVENT - Gestion Premium des Événements
 
-## 🚀 Description
-Application web moderne pour gérer vos événements avec élégance. Full-stack Node.js + SQLite.
+## 🚀 **Vercel + Neon 100% GRATUIT**
 
-**Fonctionnalités:**
-- ✅ Création/Suppression événements
-- ✅ Filtrage (tous/à venir/passés)
-- ✅ Stats en temps réel
-- ✅ Thème sombre/clair
-- ✅ Design responsive premium
-- ✅ API REST + Fallback localStorage
-
-## 📋 Installation & Lancement Local
-
-```bash
-npm install
-npm start
+## 📱 **Live Demo URLs après deploy:**
+```
+https://dw-event.vercel.app/
+https://dw-event.vercel.app/events.html
+https://dw-event.vercel.app/api/events
 ```
 
-Ouvrir http://localhost:3000
+## 🛠️ **Déploiement Vercel (5min)**
 
-## 🌐 Déploiement Render GRATUIT (Étapes Précises)
+### 1. **Vercel CLI**
+```bash
+npm i -g vercel
+vercel login
+vercel
+```
+**Choisir:** Production • GitHub (si repo) • Continue
 
-**AVERTISSEMENT SQLite :** DB reset sur restart (free tier). OK pour démo/léger trafic. Upgrade PostgreSQL pour prod.
+### 2. **DATABASE_URL Neon**
+**Vercel Dashboard → Project → Settings → Environment Variables:**
+```
+Name: DATABASE_URL
+Value: postgresql://neondb_owner:npg_atF5zMkP0EOu@ep-mute-brook-alc6k5vo-pooler.c-3.eu-central-1.aws.neon.tech/neondb?sslmode=require
+```
 
-1. **GitHub Repo :**
-   - `git init` (si pas fait)
-   - `git add .`
-   - `git commit -m \"Initial commit DW EVENT\"`
-   - Créer repo GitHub: `dw-event-app`
-   - `git remote add origin https://github.com/VOTRE-USERNAME/dw-event-app.git`
-   - `git branch -M main`
-   - `git push -u origin main`
+**3 types:** Production/Preview/Development
 
-2. **Render.com (GRATUIT 100%) :**
-   - Inscrivez-vous: https://render.com (connect GitHub)
-   - Dashboard > New > Web Service
-   - Connect repo `dw-event-app`
-   - Settings:
-     - Name: `dw-event-prod`
-     - Environment: `Node`
-     - Build Command: `npm install`
-     - Start Command: `npm start`
-     - Plan: **Free** (sleep après 15min inactif, OK site)
-   - Deploy ! (Auto sur git push)
+### 3. **Auto-deploy GitHub**
+```
+GitHub repo → Settings → Vercel (Connect)
+Push → Live instant!
+```
 
-3. **URL Live:** https://dw-event-prod.onrender.com
-   - Test: Ajoutez/supprimez événements (DB reset sleep)
-   - API: https://.../api/events
+## 🧪 **Test Local**
+```bash
+npm run test-pg
+# ou
+node server-pg.js
+```
 
-**Problèmes courants:**
-- Port: Auto (process.env.PORT)
-- SQLite: Limité, migrer PG si besoin (dites-moi)
+## 📁 **Structure Vercel**
+```
+├── api/events/route.js     ← API Événements GET/POST
+├── api/stats/route.js      ← Stats
+├── vercel.json             ← Config
+├── events.html             ← Page live
+├── index.html              ← Landing
+└── .env.example            ← Template DB
+```
 
-## 🛠️ Scripts
-- `npm start` : Prod (PORT env)
-- `npm run dev` : Dev nodemon
+**✅ Neon table `events` requise (migrate-neon.js)**
 
-## 🔗 Partage Mobile
-Double-clic `share-links.bat` → Copie URL → WhatsApp/SMS/Email.
-
-## 📱 Aperçu
-![DW EVENT](IMG-20260226-WA0120.jpg)
-
-**Fait avec ❤️ à Kinshasa, RDC**
+**Fait avec ❤️ Kinshasa → Vercel ∞**

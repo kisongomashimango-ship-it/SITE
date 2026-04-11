@@ -1,16 +1,25 @@
+# Dependencies
 node_modules/
-events.db
-*.log
-.DS_Store
+npm-debug.log*
+
+# Environment
 .env
-ngrok.*
-*.zip
-*.exe
-package-lock.json
-/dist
-/build
-Screenshot*
-*.jpg
-IMG-2026*
+.env.local
+.env.development
+.env.test
+.env.production
 
+# Vercel
+.vercel
 
+# Logs
+*.log
+npm-debug.log*
+
+# DB Local
+events.db
+*.db
+
+# OS
+.DS_Store
+Thumbs.db
