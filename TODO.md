@@ -1,18 +1,12 @@
-# TODO pour SITE DEW EVENT - Fix CSS Vercel
+# TODO - DW EVENT Vercel Colors Fix
 
-## Plan approuvé : Fix couleurs/design
+✅ **index.html** fixed : `<link href="/public/style.css">`  
+✅ **public/style.css** 16KB luxury gold/blue  
+✅ **Deploy** `vercel --prod` → https://site-dew-event-9grfi6qqn-kisongomashimango-ship-its-projects.vercel.app  
 
-**✅ Étape 1: Créé public/style-beauty-fixed.css + mis à jour index.html** - [✓ COMPLET]
+**🚀 NEXT :**  
+- [ ] Vercel Dashboard → Settings → Deployment Protection → **Public**  
+- [ ] Test /public/style.css (200 OK)  
+- [ ] Couleurs visibles !
 
-**✅ Étape 2: Mettre à jour TODO-vercel-css-fix.md** - [✓ COMPLET]
-
-**✅ Étape 3: Deploy** 
-```
-git add .
-git commit -m "Fix CSS colors: beauty upgrade to public/style.css"
-git push origin main
-```
-
-**✅ Étape 4: Vérifier nouveau lien** `vercel ls` - [TODO]
-
-**Status: En cours**
+**Lien :** https://site-dew-event-9grfi6qqn-kisongomashimango-ship-its-projects.vercel.app
