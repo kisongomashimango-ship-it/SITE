@@ -1,2 +1,21 @@
 /* DW EVENT - BEAUTY UPGRADE 2024 - LUXURY BLUE/GOLD */
-@import url('https://fonts.googleapis.com/css
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg-dark: #0a0a0a;
+  --bg-glass: rgba(255, 255, 255, 0.05);
+  --gold: #D4AF37;
+  --gold-light: #F4D03F;
+  --blue-electric: #1E3A8A;
+  --blue-glow: #3B82F6;
+  --white: #FFFFFF;
+  --gradient-gold: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%); color: white; }
+.glass-header { position: fixed; top: 0; background: rgba(255,255,255,0.05); backdrop-filter: blur(30px); padding: 1rem; display: flex; }
+.logo { font-size: 2rem; background: var(--gradient-gold); -webkit-background-clip: text; }
+.hero-title { font-size: 4rem; background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%); -webkit-background-clip: text; }
+.glass-card { background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); border-radius: 25px; padding: 3rem; }
+
