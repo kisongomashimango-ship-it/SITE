@@ -5,7 +5,7 @@ echo ========================================
 echo.
 
 REM Remplacez par votre URL Render (ex: https://dw-event-app-xxx.onrender.com)
-set SITE_URL=https://your-site.onrender.com
+set SITE_URL=https://dw-event.vercel.app
 echo 🌐 URL Site: %SITE_URL%
 echo.
 echo 📱 Copiez cette URL et partagez-la via:

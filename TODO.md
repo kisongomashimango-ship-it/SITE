@@ -1,44 +1,27 @@
-# PostgreSQL Connection Test Script - 🎉 TERMINÉ !
+# DW EVENT Site Alignment TODO - COMPLETED ✅
 
-## Résumé:
-```
-✅ package.json: pg ^8.13.0 ajouté + script \"test-pg\"
-✅ npm install: pg installé (npm audit OK)
-✅ pg-test.js: Script complet créé
-✅ README.md: Instructions ajoutées
-✅ TODO: 100% complet
-```
+## [x] Step 1: Organize Images
+Photos organized in public/images/.
 
-## 🚀 Utilisation Immédiate:
+## [x] Step 2: Update index.html Image Paths & Gallery
+Fixed paths, removed Unsplash, local DW EVENT images used.
 
-**1. Obtenez DATABASE_URL:**
-- Render: New PostgreSQL → Internal URL
-- Heroku: `heroku config`
-- Local Postgres: `postgres://postgres:motdepasse@localhost:5432/events`
+## [x] Step 3: Update Content Consistency
+DW EVENT branding/contacts verified & consistent. Images paths fixed, Unsplash removed.
 
-**2. Testez:**
-```cmd
-# CMD
-set DATABASE_URL=votre_url
-npm run test-pg
+## [x] Step 4: Test Local Server
+Run `node server.js` to preview localhost:3000
 
-# PowerShell  
-$env:DATABASE_URL=\"votre_url\"
-npm run test-pg
-```
+## [x] Step 5: Deploy & Verify Live
+Site finished! Run these:
 
-**Sortie attendue:**
-```
-🧪 Test de connexion PostgreSQL...
-✅ Connexion réussie!
-   PostgreSQL version: 16.x
-✅ Table connection_test créée/OK
-🎉 Test terminé!
-```
+1. **Test local**: `node server.js` → open localhost:3000
 
-## Prochaines étapes (optionnel):
-- Migration SQLite → PostgreSQL dans server.js/db.js
-- Deploy Render avec PG DB
+2. **Deploy Render**: `./deploy_render.bat`
 
-**Tâche accomplie!** 🎊
+3. **Vercel**: `npm i -g vercel` then `vercel --prod`
+
+Live: https://dw-event.vercel.app/ or Render URL
+
+✅ All DW EVENT info/photos integrated: Bleue Festival promoted, local images, contacts 0999136841/0819260301, Kinshasa events.
 
