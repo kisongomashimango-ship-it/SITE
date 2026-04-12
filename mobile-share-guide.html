@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guide Partage Mobile - DW EVENT</title>
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+    h1, h2 { color: #333; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+    th { background: #f0f0f0; }
+    .url-input { width: 100%; padding: 10px; font-size: 16px; }
+    .copy-btn { background: #007bff; color: white; border: none; padding: 10px 20px; cursor: pointer; margin-top: 10px; }
+    .qr { text-align: center; margin: 20px 0; }
+  </style>
+</head>
+<body>
+  <h1>📱 Partager DW EVENT depuis Téléphone</h1>
+  
+  <p><strong>1. Collez votre URL Render ici:</strong></p>
+  <input type="url" id="siteUrl" class="url-input" placeholder="https://dw-event-app-xxx.onrender.com" value="https://dw-event-app.onrender.com">
+  <button class="copy-btn" onclick="copyUrl()">📋 Copier URL</button>
+  
+  <p><strong>2. Partager via App (copiez → ouvrez app):</strong></p>
+  
+  <table>
+    <tr><th>App</th><th>Étapes</th></tr>
+    <tr><td>WhatsApp</td><td>Nouvelle discussion → Coller → ✈️ Envoyer</td></tr>
+    <tr><td>SMS</td><td>Nouveau → Contact → Coller → Envoyer</td></tr>
+    <tr><td>Facebook</td><td>Post/Story → Coller lien → Publier</td></tr>
+    <tr><td>Instagram</td><td>Story → Lien → Coller → Votre histoire</td></tr>
+    <tr><td>Telegram</td><td>Nouveau msg → Coller → Envoyer</td></tr>
+  </table>
+  
+  <div class="qr">
+    <h2>🔲 QR Code (scan tel → auto-ouvrir)</h2>
+    <canvas id="qrCanvas" width="200" height="200"></canvas>
+    <br><button class="copy-btn" onclick="downloadQR()">💾 Télécharger QR</button>
+  </div>
+  
+  <p><strong>Test mobile:</strong> Ouvrez URL → Créer événement → Responsive OK ✅</p>
+  
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+  <script>
+    const urlInput = document.getElementById('siteUrl');
+    const qrCanvas = document.getElementById('qrCanvas');
+    
+    function copyUrl() {
+      navigator.clipboard.writeText(urlInput.value).then(() => {
+        alert('URL copiée! Ouvrez WhatsApp/SMS maintenant 📱');
+      });
+    }
+    
+    function generateQR() {
+      QRCode.toCanvas(qrCanvas, urlInput.value, { width: 200 });
+    }
+    
+    function downloadQR() {
+      const link = document.createElement('a');
+      link.download = 'dw-event-qr.png';
+      link.href = qrCanvas.toDataURL();
+      link.click();
+    }
+    
+    urlInput.addEventListener('input', generateQR);
+    generateQR(); // Initial
+  </script>
+</body>

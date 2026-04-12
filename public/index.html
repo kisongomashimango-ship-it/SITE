@@ -1,14 +1,524 @@
-<!DOCTYPE html>
+§/ SITE BASES<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DW EVENT</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DW EVENT - Gestion Premium des Événements</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style-beauty-fixed.css">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet"href="style.css">
+  <meta name="theme-color" content="#d4af37">
+  <link rel="apple-touch-icon" href="/public/manifest.json">
+
 </head>
 <body>
-  <h1>DW EVENT GitHub Pages</h1>
-  <p>Site complet: localhost:3000 ou Render</p>
+  <!-- Animated Background -->
+  <div class="bg-animation">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="glass-header">
+    <div class="logo">
+      <span class="logo-icon">⚡</span>
+<span class="logo-text">DW EVENT</span>
+    </div>
+<button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Menu">☰</button>
+    <nav class="nav-links">
+      <div id="mobileNav" class="mobile-nav-drawer">
+        <a href="#" class="nav-link active" data-section="home">
+          <span class="nav-icon">🏠</span> Accueil
+        </a>
+        <a href="#" class="nav-link" data-section="about">
+          <span class="nav-icon">ℹ️</span> À propos
+        </a>
+        <a href="#" class="nav-link" data-section="services">
+          <span class="nav-icon">🎯</span> Services
+        </a>
+        <a href="#" class="nav-link" data-section="why-us">
+          <span class="nav-icon">✨</span> Pourquoi nous
+        </a>
+        <a href="#" class="nav-link" data-section="stats">
+          <span class="nav-icon">📊</span> Réalisations
+        </a>
+        <a href="#" class="nav-link" data-section="testimonials">
+          <span class="nav-icon">⭐</span> Avis
+        </a>
+        <a href="#" class="nav-link" data-section="create">
+          <span class="nav-icon">➕</span> Créer
+        </a>
+        <a href="#" class="nav-link" data-section="events">
+          <span class="nav-icon">📅</span> Événements
+        </a>
+        <a href="#" class="nav-link" data-section="gallery">
+          <span class="nav-icon">📸</span> Galerie
+        </a>
+        <a href="#" class="nav-link" data-section="contact">
+          <span class="nav-icon">📞</span> Contact
+        </a>
+      </div>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème">
+      🌙
+    </button>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+  <!-- Hero Section with Photo -->
+  <section class="hero" id="home">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="gradient-text">DW EVENT</span>
+          <br>Organisation d’événements en direct
+        </h1>
+        <p class="hero-subtitle">
+          Site déjà hébergé et visible en ligne. Modifiez le contenu et le design, et voyez le résultat immédiatement.
+        </p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number" id="totalEvents">0</span>
+            <span class="stat-label">Événements</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" id="upcomingEvents">0</span>
+            <span class="stat-label">À venir</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" id="pastEvents">0</span>
+            <span class="stat-label">Passés</span>
+          </div>
+        </div>
+      </div>
+
+          <span class="card-icon">🎯</span>
+          <span>Workshop Design</span>
+        </div>
+
+
+        <div class="floating-card card-3">
+          <span class="card-icon">🎭</span>
+          <span>Événement à venir</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bleue Festival - L'ÉVÉNEMENT À VENIR -->
+    <section class="bleue-festival-section highlight-section" id="bleue-festival">
+      <div class="container">
+        <div class="festival-badge">
+          <span class="badge-text">ÉVÉNEMENT À VENIR</span>
+        </div>
+        <div class="festival-content">
+          <h2 class="festival-title blue-gradient">Bleue Festival</h2>
+          <div class="festival-meta">
+            <span class="meta-date">📅 17-18 Juillet 2026</span>
+            <span class="meta-phone">📞 0999136841 | 0819260301</span>
+          </div>
+          <div class="festival-image-container">
+            <img src="/images/placeholder-bleue-festival.jpg" alt="Bleue Festival - Événement à venir" class="festival-image">
+          </div>
+<button onclick="showFestivalInfo()" class="festival-cta btn-info-resa">INFO &amp; RÉSERVATION</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="bleue-festival-section" id="bleue-festival">
+      <div class="section-header">
+        <h2>🎉 Bleue Festival</h2>
+        <p>17 et 18 Juillet 2026 - Réservez maintenant !</p>
+      </div>
+      <div class="festival-container glass-card">
+        <img src="/images/placeholder-bleue-festival.jpg" alt="Bleue Festival" class="festival-img">
+        <div class="festival-info">
+          <h3>📅 Dates</h3>
+          <p>17 - 18 Juillet 2026</p>
+          <h3>📞 Réservations</h3>
+          <p><strong>0999136841</strong><br><strong>0819260301</strong></p>
+          <a href="#create" class="festival-btn submit-btn">Réserver Bleue Festival</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+
+      <div class="section-header">
+        <h2>💼 À propos de DW EVENT</h2>
+      </div>
+      <div class="about-content glass-card" style="padding: 1.5rem;">
+        <p>
+          DW EVENT accompagne les entreprises, associations et particuliers de Kinshasa
+          et de toute la RDC dans l’organisation d’événements clé en main.
+          Conférences, formations, mariages, soirées, lancements de produits :
+          nous proposons planning, gestion des participants, communication et support sur place.
+        </p>
+        <ul style="margin-top: 1rem; color: var(--text-secondary);">
+          <li>✅ Conseil stratégique d’événementiel</li>
+          <li>✅ Gestion des inscriptions et billetterie</li>
+          <li>✅ Coordination logistique et technique</li>
+          <li>✅ Support client 7j/7 (WhatsApp, email, téléphone)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+      <div class="section-header">
+        <h2>🎯 Nos Services</h2>
+        <p>Des solutions complètes pour tous vos événements</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card glass-card">
+          <img src="/images/placeholder-bleue-festival.jpg" alt="Conseil" class="service-image" loading="lazy">
+          <h3>Conseil & Conception</h3>
+          <p>Nous vous aidons à définir votre vision, le concept, le budget et le planning de votre événement.</p>
+        </div>
+        <div class="service-card glass-card">
+  <img src="/images/IMG-20260226-WA0120.jpg" alt="Gestion DW EVENT" class="service-image" loading="lazy">
+          <h3>Gestion Complète</h3>
+          <p>Inscriptions, billetterie, coordination des participants, logistics et tous les détails administratifs.</p>
+        </div>
+        <div class="service-card glass-card">
+  <img src="/images/IMG-20260406-WA0337.jpg" alt="Animation DW EVENT" class="service-image" loading="lazy">
+          <h3>Animation & Production</h3>
+          <p>Son, lumière, animateurs, coordination sur site et gestion en direct de votre événement.</p>
+        </div>
+        <div class="service-card glass-card">
+  <img src="/images/IMG-20260226-WA0120.jpg" alt="Rapports DW EVENT" class="service-image" loading="lazy">
+          <h3>Suivi & Rapports</h3>
+          <p>Bilan post-événement détaillé, photos, vidéos, statistiques et suggestions d'amélioration.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="why-us-section" id="why-us">
+      <div class="section-header">
+        <h2>✨ Pourquoi Choisir DW EVENT?</h2>
+      </div>
+      <div class="why-us-grid">
+        <div class="why-us-card glass-card">
+          <div class="why-us-icon">👥</div>
+          <h3>Équipe Expérimentée</h3>
+          <p>Professionnels spécialisés dans l'événementiel avec une connaissance approfondie du marché de Kinshasa et de la RDC.</p>
+        </div>
+        <div class="why-us-card glass-card">
+          <div class="why-us-icon">⏰</div>
+          <h3>Support 24/7</h3>
+          <p>Disponible par WhatsApp, email et téléphone pour répondre à vos questions et gérer les imprévus.</p>
+        </div>
+        <div class="why-us-card glass-card">
+          <div class="why-us-icon">🎨</div>
+          <h3>Approche Personnalisée</h3>
+          <p>Chaque événement est unique. Nous adaptons nos services à votre image, vos valeurs et vos objectifs.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section" id="stats">
+      <div class="section-header">
+        <h2>📈 Nos Chiffres</h2>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card glass-card">
+          <div class="stat-big-number">15+</div>
+          <p>Événements Organisés</p>
+        </div>
+        <div class="stat-card glass-card">
+          <div class="stat-big-number">500+</div>
+          <p>Participants Satisfaits</p>
+        </div>
+        <div class="stat-card glass-card">
+          <div class="stat-big-number">20+</div>
+          <p>Clients de Confiance</p>
+        </div>
+        <div class="stat-card glass-card">
+          <div class="stat-big-number">100%</div>
+          <p>Satisfaction Client</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+      <div class="section-header">
+        <h2>⭐ Témoignages</h2>
+        <p>Ce que nos clients disent de nous</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card glass-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"DW EVENT a transformé notre conférence en un vrai succès. Organisation impeccable, équipe réactive et professionnelle. Bravo!"</p>
+          <p class="testimonial-author">— <strong>Ahmed K.</strong>, Entreprise TechKin</p>
+        </div>
+        <div class="testimonial-card glass-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"Pour notre mariage, DW EVENT s'est occupé de tout. Les détails, le timing, la qualité... tout était parfait. Merci infiniment!"</p>
+          <p class="testimonial-author">— <strong>Marie & Pierre</strong>, Couple Heureux</p>
+        </div>
+        <div class="testimonial-card glass-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"Nous avons lancé notre produit avec DW EVENT. Le support 24/7, la créativité et le professionnalisme, ça change tout!"</p>
+          <p class="testimonial-author">— <strong>Directeur Commercial</strong>, Startup Innovation RDC</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Create Event Section -->
+    <section class="create-section" id="create">
+      <div class="form-container glass-card">
+        <div class="form-header">
+          <h2>✨ Créer un nouvel événement</h2>
+          <p>Remplissez les détails pour ajouter un événement</p>
+        </div>
+        <form id="eventForm" class="event-form">
+          <div class="form-group">
+            <label for="eventName">
+              <span class="label-icon">📝</span> Nom de l'événement
+            </label>
+            <input 
+              type="text" 
+              id="eventName" 
+              placeholder="Ex: Conférence Annuelle 2024"
+              required
+              autocomplete="off"
+            >
+            <span class="input-highlight"></span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="eventDate">
+                <span class="label-icon">📅</span> Date
+              </label>
+              <input 
+                type="date" 
+                id="eventDate" 
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="eventTime">
+                <span class="label-icon">⏰</span> Heure
+              </label>
+              <input 
+                type="time" 
+                id="eventTime"
+                required
+              >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="eventLocation">
+              <span class="label-icon">📍</span> Lieu
+            </label>
+            <input 
+              type="text" 
+              id="eventLocation" 
+              placeholder="Ex: Paris, France"
+              required
+              autocomplete="off"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="eventDescription">
+              <span class="label-icon">📄</span> Description
+            </label>
+            <textarea 
+              id="eventDescription" 
+              placeholder="Décrivez votre événement..."
+              rows="3"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="eventCategory">
+              <span class="label-icon">🏷️</span> Catégorie
+            </label>
+            <select id="eventCategory">
+<option value="festival">🎉 Concert Festival</option>
+              <option value="personal">🎉 Personnel</option>
+              <option value="education">📚 Éducation</option>
+              <option value="entertainment">🎭 Divertissement</option>
+              <option value="sports">⚽ Sport</option>
+              <option value="other">📌 Autre</option>
+            </select>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <span class="btn-text">Créer l'événement</span>
+            <span class="btn-icon">🚀</span>
+            <div class="btn-glow"></div>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Events List Section -->
+    <section class="events-section" id="events">
+      <div class="section-header">
+        <h2>📋 Vos événements</h2>
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all">Tous</button>
+          <button class="filter-tab" data-filter="upcoming">À venir</button>
+          <button class="filter-tab" data-filter="past">Passés</button>
+        </div>
+      </div>
+      <div class="events-grid" id="eventList">
+        <!-- Events will be dynamically added here -->
+
+        <div class="empty-state highlight-empty">
+        <div class="empty-icon-large">🎉</div>
+        <h2>Bleue Festival - Prochain Événement</h2>
+        <p class="highlight-text blue-gradient">17 et 18 Juillet 2026</p>
+        <p>Réservations : <strong>0999136841</strong> | <strong>0819260301</strong></p>
+        <p>Préparez votre événement dès maintenant !</p>
+        <a href="#create" class="empty-cta submit-btn">Créer Événement</a>
+      </div>
+
+
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery">
+      <div class="section-header">
+        <h2>📸 Notre Galerie</h2>
+        <p>Découvrez les moments inoubliables de nos événements</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item large">
+<img src="/images/IMG-20260406-WA0337.jpg" alt="Bleue Festival - Événement DW EVENT" loading="lazy">
+          <div class="gallery-overlay">
+            <span>🎉 Bleue Festival</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="/images/IMG-20260226-WA0120.jpg" alt="Conférence DW EVENT" loading="lazy">
+          <div class="gallery-overlay">
+            <span>💼 Conférence</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="/images/IMG-20260406-WA0337.jpg" alt="Événement DW EVENT" loading="lazy">
+          <div class="gallery-overlay">
+            <span>🎭 Événement DW EVENT</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="/images/placeholder-bleue-festival.jpg" alt="Fête DW EVENT" loading="lazy">
+          <div class="gallery-overlay">
+            <span>🎉 Fête DW EVENT</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="/images/IMG-20260226-WA0120.jpg" alt="Célébration DW EVENT" loading="lazy">
+          <div class="gallery-overlay">
+            <span>✨ Célébration DW EVENT</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="/images/IMG-20260406-WA0337.jpg" alt="Production DW EVENT" loading="lazy">
+          <div class="gallery-overlay">
+            <span>💡 Production DW EVENT</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <div class="contact-header">
+          <h2>📞 Nous Contacter</h2>
+          <p>Une question ? Besoin d'aide pour organiser votre événement ?</p>
+        </div>
+        
+        <div class="contact-grid">
+          <div class="contact-card glass-card">
+            <div class="contact-icon">📱</div>
+            <h3>Téléphone</h3>
+            <p>+243 819 260 301</p>
+          </div>
+          
+          <div class="contact-card glass-card">
+            <div class="contact-icon">📧</div>
+            <h3>Email</h3>
+            <p>dailiewenga@gmail.com</p>
+          </div>
+          
+          <div class="contact-card glass-card">
+            <div class="contact-icon">📍</div>
+            <h3>Adresse</h3>
+            <p>Kinshasa, République Démocratique du Congo</p>
+          </div>
+          
+          <div class="contact-card glass-card">
+            <div class="contact-icon">🕐</div>
+            <h3>Horaires</h3>
+            <p>Lun - Sam: 8h00 - 18h00</p>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook">📘</a>
+          <a href="#" class="social-link" aria-label="Instagram">📸</a>
+          <a href="#" class="social-link" aria-label="WhatsApp">💬</a>
+          <a href="#" class="social-link" aria-label="LinkedIn">💼</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-icon">⚡</span>
+          <span class="logo-text">DW EVENT</span>
+        </div>
+        <p class="footer-text">© 2024 DW EVENT - Votre partenaire événements à Kinshasa</p>
+        <p class="footer-subtext">Fait avec ❤️ en RDC</p>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Toast Notification -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Modal -->
+  <div class="modal" id="eventModal">
+    <div class="modal-content glass-card">
+      <button class="modal-close" aria-label="Fermer">&times;</button>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-top" id="scrollTop" aria-label="Retour en haut">⬆️</button>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(reg => console.log('✅ PWA Service Worker OK'))
+          .catch(err => console.log('❌ SW fail:', err));
+      });
+    }
+  </script>
+  <script>
+    function showFestivalInfo() {
+      alert('🎉 BLEUE FESTIVAL KINSHASA 2026\\n📅 17-18 Juillet 2026\\n📞 Réservations: 0999136841 | 0819260301\\n\\nCliquez Créer pour votre pass !');
+    }
+  </script>
+  <script src="/script.js"></script>
 </body>
 </html>

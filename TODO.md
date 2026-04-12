@@ -1,27 +1,18 @@
-# DW EVENT Site Alignment TODO - COMPLETED ✅
+# TODO pour SITE DEW EVENT - Fix CSS Vercel
 
-## [x] Step 1: Organize Images
-Photos organized in public/images/.
+## Plan approuvé : Fix couleurs/design
 
-## [x] Step 2: Update index.html Image Paths & Gallery
-Fixed paths, removed Unsplash, local DW EVENT images used.
+**✅ Étape 1: Créé public/style-beauty-fixed.css + mis à jour index.html** - [✓ COMPLET]
 
-## [x] Step 3: Update Content Consistency
-DW EVENT branding/contacts verified & consistent. Images paths fixed, Unsplash removed.
+**✅ Étape 2: Mettre à jour TODO-vercel-css-fix.md** - [✓ COMPLET]
 
-## [x] Step 4: Test Local Server
-Run `node server.js` to preview localhost:3000
+**✅ Étape 3: Deploy** 
+```
+git add .
+git commit -m "Fix CSS colors: beauty upgrade to public/style.css"
+git push origin main
+```
 
-## [x] Step 5: Deploy & Verify Live
-Site finished! Run these:
+**✅ Étape 4: Vérifier nouveau lien** `vercel ls` - [TODO]
 
-1. **Test local**: `node server.js` → open localhost:3000
-
-2. **Deploy Render**: `./deploy_render.bat`
-
-3. **Vercel**: `npm i -g vercel` then `vercel --prod`
-
-Live: https://dw-event.vercel.app/ or Render URL
-
-✅ All DW EVENT info/photos integrated: Bleue Festival promoted, local images, contacts 0999136841/0819260301, Kinshasa events.
-
+**Status: En cours**

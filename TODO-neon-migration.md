@@ -10,7 +10,7 @@
 
 ```powershell
 $env:DATABASE_URL="postgresql://neondb_owner:npg_atF5zMkP0EOu@ep-mute-brook-alc6k5vo-pooler.c-3.eu-central-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
-node server-pg.js
+s
 ```
 
 **Ouvrir:**

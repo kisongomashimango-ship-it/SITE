@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
   scrollTopBtn.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
 
   // Nav smooth scroll
-  document.querySelectorAll('a[href^=\"#\"]').forEach(anchor => {
+  document.querySelectorAll('a[href^=\"#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));

@@ -51,4 +51,4 @@ Vercel auto-deploys on push.
 └── package.json
 ```
 
-**Status: Ready for git push → Vercel auto-deploy**
+**✅ FIXED: Utilisé style-beauty-fixed.css + index.html mis à jour. Ready for git push → auto-deploy avec couleurs !**

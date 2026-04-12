@@ -760,6 +760,32 @@ main > section {
   animation: float 6s ease-in-out infinite;
 }
 
+/* Theme Toggle - Light/Dark */
+body.dark-theme {
+  --bg-dark: #f8fafc;
+  --bg-glass: rgba(255, 255, 255, 0.8);
+  --white: #1e293b;
+  --gray-light: #64748b;
+  --gradient-dark: linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 100%);
+}
+
+body.dark-theme .glass-header,
+body.dark-theme .glass-card {
+  border-color: rgba(0, 0, 0, 0.1);
+  background: rgba(248, 250, 252, 0.9);
+  color: var(--white);
+}
+
+body.dark-theme .logo-text,
+body.dark-theme .nav-link {
+  color: var(--white);
+}
+
+body.dark-theme .theme-toggle::after {
+  content: '☀️';
+}
+
+
 /* Scroll Top */
 .scroll-top {
   position: fixed;
