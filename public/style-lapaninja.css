@@ -1,0 +1,182 @@
+/* DW EVENT - LAPA.NINJA STYLE CRÉATIF 2025 - ANIMATIONS 3D */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --card-gradient: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255,255,255,0.8);
+  --accent-neon: #00f5ff;
+  --shadow-neon: 0 0 30px rgba(0, 245, 255, 0.5);
+  --radius: 24px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+  font-family: 'Manrope', sans-serif; 
+  background: var(--bg-gradient); 
+  color: var(--text-primary); 
+  min-height: 100vh; 
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
+  z-index: -1;
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-20px) rotate(120deg); }
+  66% { transform: translateY(10px) rotate(240deg); }
+}
+
+.header { 
+  position: absolute; 
+  top: 2rem; 
+  left: 2rem; 
+  right: 2rem; 
+  background: var(--card-gradient); 
+  backdrop-filter: blur(20px); 
+  border: 1px solid rgba(255,255,255,0.2); 
+  border-radius: var(--radius); 
+  padding: 1.5rem 2rem; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  z-index: 100;
+}
+
+.logo { 
+  font-size: 2rem; 
+  font-weight: 800; 
+  background: linear-gradient(45deg, var(--accent-neon), #fff); 
+  -webkit-background-clip: text; 
+  background-clip: text; 
+}
+
+.card { 
+  background: var(--card-gradient); 
+  backdrop-filter: blur(20px); 
+  border: 1px solid rgba(255,255,255,0.2); 
+  border-radius: var(--radius); 
+  padding: 3rem; 
+  box-shadow: var(--shadow-neon); 
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+  position: relative; 
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-neon), transparent);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.card:hover::before { transform: scaleX(1); }
+.card:hover { transform: translateY(-15px) rotateX(5deg); box-shadow: 0 50px 100px rgba(0,0,0,0.3); }
+
+.hero { 
+  min-height: 100vh; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
+  padding-top: 12rem; 
+}
+.hero h1 { 
+  font-size: clamp(4rem, 10vw, 8rem); 
+  font-weight: 800; 
+  background: linear-gradient(45deg, var(--accent-neon), #fff); 
+  -webkit-background-clip: text; 
+  background-clip: text; 
+  margin-bottom: 2rem; 
+  animation: glow 2s ease-in-out infinite alternate; 
+}
+@keyframes glow { 
+  from { filter: drop-shadow(0 0 20px var(--accent-neon)); } 
+  to { filter: drop-shadow(0 0 40px var(--accent-neon)); } 
+}
+
+.services { padding: 10rem 2rem; max-width: 1400px; margin: 0 auto; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 4rem; }
+
+.btn-neon { 
+  background: linear-gradient(45deg, var(--accent-neon), #00d4ff); 
+  color: #000; 
+  padding: 1.25rem 3rem; 
+  border: none; 
+  border-radius: 50px; 
+  font-weight: 700; 
+  font-size: 1.1rem; 
+  cursor: pointer; 
+  position: relative; 
+  overflow: hidden; 
+  box-shadow: 0 10px 30px rgba(0,245,255,0.4); 
+}
+.btn-neon:hover { transform: scale(1.05) translateY(-3px); box-shadow: 0 20px 50px rgba(0,245,255,0.6); }
+
+.floating-cards {
+  position: fixed;
+  top: 20%;
+  right: 5%;
+  z-index: 10;
+  animation: float-card 6s ease-in-out infinite;
+}
+.floating-card {
+  background: var(--card-gradient);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: var(--radius);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-neon);
+  animation: pulse 3s infinite;
+}
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+@keyframes float-card { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+
+@media (max-width: 768px) {
+  .header { position: relative; top: 0; }
+  .floating-cards { display: none; }
+}
+
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--accent-neon);
+  border-radius: 50%;
+  animation: particle-float 15s linear infinite;
+}
+@keyframes particle-float {
+  0% { transform: translateY(100vh) scale(0); opacity: 1; }
+  100% { transform: translateY(-100px) scale(1); opacity: 0; }
+}
+
