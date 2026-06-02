@@ -1,12 +1,12 @@
-# TODO - DW EVENT Vercel Colors Fix
+# TODO - Déploiement du site static (Vercel)
 
-✅ **index.html** fixed : `<link href="/public/style.css">`  
-✅ **public/style.css** 16KB luxury gold/blue  
-✅ **Deploy** `vercel --prod` → https://site-dew-event-9grfi6qqn-kisongomashimango-ship-its-projects.vercel.app  
+- [x] Vérifier que `static/static_site.html` est présent dans le dossier `static/`
+- [ ] (Optionnel) Ajouter une image `static/profile.jpg`
 
-**🚀 NEXT :**  
-- [ ] Vercel Dashboard → Settings → Deployment Protection → **Public**  
-- [ ] Test /public/style.css (200 OK)  
-- [ ] Couleurs visibles !
+- [ ] Push du dossier `static/` (et `profile.jpg` si ajouté) sur GitHub (git push)
+- [ ] Dans Vercel: Create New Project → Static
+- [ ] Root Directory: sélectionner `static/`
+- [ ] Build Command: laisser vide
+- [ ] Output Directory: laisser vide
+- [ ] Tester l’URL Vercel: vérifier que la page servie est bien `static_site.html`
 
-**Lien :** https://site-dew-event-9grfi6qqn-kisongomashimango-ship-its-projects.vercel.app
