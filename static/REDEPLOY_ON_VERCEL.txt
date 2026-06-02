@@ -1,0 +1,14 @@
+Vercel (Static) - checklist rapide
+
+1) Commit/push du dossier static/ vers GitHub.
+2) Dans Vercel: New Project -> Import project -> sélectionner le repo.
+3) Framework preset: "Other" (ou "Static")
+4) Build Command: laisser vide
+5) Output Directory: laisser vide
+6) Root Directory: sélectionner le dossier "static" (selon l’UI)
+7) Tester: l’URL doit afficher static/static_site.html
+
+Assets:
+- Optionnel: placer une image au chemin static/profile.jpg
+- Le HTML pointe sur /profile.jpg
+

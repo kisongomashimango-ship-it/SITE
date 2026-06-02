@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Fullstack | Expert Dev</title>
+
+    <!-- Tailwind CDN (static, no build step) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              slate: {
+                950: "#020617",
+              },
+              blue: {
+                500: "#3b82f6",
+                400: "#60a5fa",
+                600: "#2563eb",
+                700: "#1d4ed8"
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      html { scroll-behavior: smooth; }
+    </style>
+  </head>
+  <body class="bg-slate-950 text-slate-100 antialiased">
+    <div class="min-h-screen bg-slate-950 text-slate-100 font-sans">
+      <!-- Navigation -->
+      <nav class="fixed w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+          <h1 class="text-xl font-bold tracking-tight text-blue-500">DevPortfolio</h1>
+          <div class="flex gap-6 text-sm font-medium">
+            <a href="#about" class="hover:text-blue-400 transition">À propos</a>
+            <a href="#projects" class="hover:text-blue-400 transition">Projets</a>
+            <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section id="about" class="pt-32 pb-20 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-5xl font-extrabold mb-6">
+            Développeur Fullstack <span class="text-blue-500">Passionné</span>
+          </h2>
+          <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+            Spécialisé dans la création d'applications web robustes et modernes. Je transforme des idées complexes en solutions digitales élégantes et performantes. Basé au Congo, je travaille avec les dernières technologies.
+          </p>
+          <div class="flex gap-4">
+            <a href="https://github.com" class="p-3 bg-slate-800 rounded-full hover:bg-slate-700 transition" aria-label="GitHub">🐙</a>
+            <a href="https://linkedin.com" class="p-3 bg-slate-800 rounded-full hover:bg-slate-700 transition" aria-label="LinkedIn">💼</a>
+            <a href="mailto:email@example.com" class="p-3 bg-slate-800 rounded-full hover:bg-slate-700 transition" aria-label="Email">📧</a>
+          </div>
+        </div>
+
+        <div class="relative">
+          <!-- Place your image at: static/profile.jpg -->
+          <img
+            src="/profile.jpg"
+            alt="Développeur au travail"
+            onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450"><rect width="100%" height="100%" fill="%230b1220"/><text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%2360a5fa" font-family="Arial" font-size="28">profile.jpg missing</text></svg>';"
+            class="rounded-2xl shadow-2xl border border-slate-700 w-full object-cover"
+          />
+          <div class="absolute -bottom-6 -right-6 p-6 bg-slate-900 border border-slate-700 rounded-xl shadow-xl">
+            <div class="text-3xl font-bold text-blue-500">3+</div>
+            <div class="text-sm text-slate-400">Années d'expérience</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section class="py-20 bg-slate-900/50">
+        <div class="max-w-6xl mx-auto px-6">
+          <h3 class="text-3xl font-bold mb-12 text-center">Expertises Techniques</h3>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="p-8 bg-slate-950 border border-slate-800 rounded-2xl hover:border-blue-500/50 transition">
+              <div class="text-3xl mb-4">🖥️</div>
+              <h4 class="text-xl font-semibold mb-2">Frontend</h4>
+              <p class="text-slate-400 text-sm">React, TypeScript, TailwindCSS, Next.js</p>
+            </div>
+            <div class="p-8 bg-slate-950 border border-slate-800 rounded-2xl hover:border-blue-500/50 transition">
+              <div class="text-3xl mb-4">🗄️</div>
+              <h4 class="text-xl font-semibold mb-2">Backend</h4>
+              <p class="text-slate-400 text-sm">Node.js, Python, PostgreSQL, MongoDB</p>
+            </div>
+            <div class="p-8 bg-slate-950 border border-slate-800 rounded-2xl hover:border-blue-500/50 transition">
+              <div class="text-3xl mb-4">💻</div>
+              <h4 class="text-xl font-semibold mb-2">DevOps/Tools</h4>
+              <p class="text-slate-400 text-sm">Git, Docker, Vercel, AWS</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="py-20 px-6 max-w-6xl mx-auto">
+        <h3 class="text-3xl font-bold mb-12">Projets Récents</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-slate-600 transition">
+            <div class="h-48 bg-slate-800"></div>
+            <div class="p-6">
+              <h4 class="text-xl font-semibold mb-2">Application 1</h4>
+              <p class="text-slate-400 mb-4 text-sm">Description courte du projet. Technologies utilisées : React, Node.js.</p>
+              <a href="#" class="flex items-center gap-2 text-blue-400 font-medium text-sm">Voir projet 🔗</a>
+            </div>
+          </div>
+          <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-slate-600 transition">
+            <div class="h-48 bg-slate-800"></div>
+            <div class="p-6">
+              <h4 class="text-xl font-semibold mb-2">Application 2</h4>
+              <p class="text-slate-400 mb-4 text-sm">Description courte du projet. Technologies utilisées : React, Node.js.</p>
+              <a href="#" class="flex items-center gap-2 text-blue-400 font-medium text-sm">Voir projet 🔗</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <footer id="contact" class="py-20 bg-slate-950 border-t border-slate-800 text-center px-6">
+        <h3 class="text-3xl font-bold mb-6">Prêt à collaborer ?</h3>
+        <p class="text-slate-400 mb-8 max-w-lg mx-auto">
+          N'hésitez pas à me contacter pour toute opportunité ou question. Je suis disponible pour de nouveaux challenges.
+        </p>
+        <a href="mailto:email@example.com" class="inline-block px-8 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition">Envoyer un email</a>
+      </footer>
+    </div>
+  </body>
+</html>
+
