@@ -1,11 +1,22 @@
-# TODO - Intégrer photo + déployer Vercel
+# TODO - Hébergement Vercel + API
 
-- [x] 1) Ajouter ta photo dans `public/images/` (avec un nom compatible)
-- [x] 2) Modifier `src/App.tsx` pour utiliser cette nouvelle photo comme avatar (déjà fait via `images/avatar.jpg`)
+## Étape 1 — Compréhension
+- [x] Vérifier que le projet est Next.js + App Router
+- [x] Lire `app/api/contact/route.ts` (validation + réponse JSON)
 
-- [x] 3) Lancer `npm install` (si besoin)
-- [x] 4) Lancer `npm run build` pour valider le build
-- [ ] 5) Déployer sur Vercel (instructions)
+## Étape 2 — Déploiement Vercel
+- [x] Vérifier `vercel.json` (configuration Next correcte)
+- [ ] Corriger la config Tailwind/PostCSS pour que `npm run build` passe
 
+## Étape 3 — Test local avant déploiement
+- [ ] `npm install`
+- [ ] `npm run build` (doit réussir)
+- [ ] `npm run dev` + test du formulaire
+
+## Étape 4 — Déploiement
+- [ ] Déployer sur Vercel depuis GitHub et valider le formulaire
+
+## Étape 5 — Fonctionnel contact
+- [ ] Vérifier que `POST /api/contact` renvoie 200 et que l’UI affiche succès
 
 
