@@ -105,14 +105,14 @@ const testimonials = [
     name: "Marc Dubois",
     role: "CEO, DigitalFlow Inc.",
     content:
-      "Alexandre a livré notre plateforme avec une qualité remarquable. Son expertise full-stack et son professionnalisme sont inégalés.",
+      "Ben Kisongo a livré notre plateforme avec une qualité remarquable. Son expertise full-stack et son professionnalisme sont inégalés.",
     avatar: "MD",
   },
   {
     name: "Julie Chen",
     role: "Product Manager, StartupHub",
     content:
-      "Travailler avec Alexandre a été une expérience formidable. Il comprend parfaitement les enjeux business et techniques.",
+      "Travailler avec Ben Kisongo a été une expérience formidable. Il comprend parfaitement les enjeux business et techniques.",
     avatar: "JC",
   },
 ];
@@ -752,7 +752,7 @@ function Contact() {
           <h2 className="text-3xl md:text-5xl font-bold text-white mt-3">Travaillons ensemble</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
           <div className={cn("space-y-8 transition-all duration-700", visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8")}>
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 rounded-xl glass-light flex items-center justify-center shrink-0">
@@ -763,6 +763,26 @@ function Contact() {
               <div>
                 <p className="text-xs text-gray-500 uppercase tracking-wider">Email</p>
                 <p className="text-white font-medium mt-1">{PROFILE.email}</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-xl glass-light flex items-center justify-center shrink-0">
+                <svg className="w-5 h-5 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 22s8-4 8-10V8l-8-4-8 4v4c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <div>
+                <p className="text-xs text-gray-500 uppercase tracking-wider">WhatsApp</p>
+                <a
+                  href={`https://wa.me/243${PROFILE.phone}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-white font-medium mt-1 inline-flex items-center gap-2 hover:text-accent-1 transition-colors"
+                >
+                  {PROFILE.phone}
+                  <span className="text-xs text-accent-1">(écrire)</span>
+                </a>
               </div>
             </div>
           </div>

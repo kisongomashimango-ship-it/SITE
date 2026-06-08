@@ -1,21 +1,17 @@
-# TODO - Hébergement Vercel + API
+# TODO - Ajout WhatsApp + déploiement Vercel
 
-## Étape 1 — Compréhension
-- [x] Vérifier que le projet est Next.js + App Router
-- [x] Lire `app/api/contact/route.ts` (validation + réponse JSON)
+## Étape 1
+- [x] Comprendre où afficher le contact (section Contact + données PROFILE.phone)
 
-## Étape 2 — Déploiement Vercel
-- [x] Vérifier `vercel.json` (configuration Next correcte)
-- [x] Corriger l’environnement d’installation Next (build OK en local)
+## Étape 2
+- [ ] Ajouter un bouton/lien WhatsApp dans la section Contact pointant vers wa.me avec le numéro 0979832523
 
-## Étape 3 — Test local avant déploiement
-- [x] `npm install` / réinstallation propre
-- [x] `npm run build` (réussit)
-- [x] `npm run dev` / test formulaire
+## Étape 3
+- [ ] Mettre à jour le texte/masque du numéro si nécessaire (format international)
 
-## Étape 4 — Déploiement
-- [ ] Déployer sur Vercel depuis GitHub et valider le formulaire
+## Étape 4
+- [ ] Déployer la mise à jour sur Vercel (car site déjà hébergé)
 
-## Étape 5 — Fonctionnel contact
-- [x] Vérifier que `POST /api/contact` renvoie 200 et que l’UI affiche succès (test local)
+## Étape 5
+- [ ] Vérifier le rendu (bouton visible et clic ouvre WhatsApp)
 
