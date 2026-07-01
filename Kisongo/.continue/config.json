@@ -1,0 +1,16 @@
+{
+    "models": [
+        {
+            "title": "Qwen 1.5B(Gratuit)",
+            "provider": "ollama",
+            "model": "qwen2.5-coder:1.5b"
+            
+        }
+    ], 
+     "tabAutocompleteModel": {
+        "title": "Qwen 1.5B(Gratuit)",
+        "provider": "ollama",
+        "model": "qwen2.5-coder:1.5b-b"
+     }
+   }
+
